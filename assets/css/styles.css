@@ -1,91 +1,68 @@
-.profile-picture {
-  border-radius: 50%; 
-  width: 100px; 
-  height: 100px; 
-}
-  
+/* styles.css (corrigé) */
 
-.cv-experience {
-  margin-bottom: 20px; /* Espacement entre les expériences */
+/* IMPORTANT : on ne force plus width/height sur toutes les images */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.cv-experience h3 {
-  font-size: 1.2em; /* Taille de police pour le titre */
-  font-weight: bold; /* Gras pour le titre */
+/* Photo de profil */
+.profile-link{
+  display: inline-block;
+  text-decoration: none;
 }
 
-.cv-experience h4 {
-  font-size: 1em; /* Taille de police pour les sous-titres */
-  font-weight: bold; /* Gras pour les sous-titres */
-  margin-top: 10px; /* Espacement entre les sous-titres et le contenu */
+.profile-picture{
+  border-radius: 50%;
+  width: 160px;          /* ajustez si besoin */
+  height: 160px;
+  object-fit: cover;     /* évite la déformation */
+  object-position: center;
+  display: block;
+  border: 3px solid rgba(255,255,255,0.7);
 }
 
-.cv-header h1 {
-  font-size: 2em; /* Taille de police pour le nom */
-  font-weight: bold; /* Gras pour le nom */
-}
-
-.cv-header h2 {
-  font-size: 1.5em; /* Taille de police pour le poste */
-  font-weight: bold; /* Gras pour le poste */
-  margin-top: 10px; /* Espacement entre le nom et le poste */
-}
-
-.cv-header h3 {
-  font-size: 1.2em; /* Taille de police pour l'entreprise */
-  margin-top: 10px; /* Espacement entre le poste et l'entreprise */
-}
-
-.cv-header h5 {
-  font-size: 1.4em; /* Taille de police pour le nom */
-  font-weight: bold; /* Gras pour le nom */
-}
-
-.profile:hover {
-  background-color: #f5f5f5;
-}
-
-.formation:hover {
-  background-color: #f5f5f5;
-}
-
-.experience:hover {
-  background-color: #f5f5f5;
-}
-
+/* Sections */
 .section:hover {
-  background-color: #f5eeee; /* Couleur de fond lorsque l'utilisateur survole l'élément */
+  background-color: #f5eeee;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transform: scale(1.01);
-  transition-property: "transform";
-  transition-duration: 0.3s;
-  transition-delay: 0.
+  transition: transform 0.3s;
 }
 
 .section {
   padding-block: 7px;
   transform: scale(1);
-  transition-property: "transform";
-  transition-duration: 0.3s;
-}
-  
-
-/* .education {
-  padding: 10px;
-} */
-
-.certifications {
-  padding: 10px;
+  transition: transform 0.3s;
 }
 
-img {
-  object-fit: cover; /* recouvre l'image */
-  width: 50%; /* rempli la largeur de la colonne */
-  height: 50%; /* rempli la hauteur de la colonne */
-  margin-left: 1px; 
+/* CV experience */
+.cv-experience {
+  margin-bottom: 20px;
+}
+.cv-experience h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.cv-experience h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
+/* Header */
+.cv-header h1 { font-size: 2em; font-weight: bold; }
+.cv-header h2 { font-size: 1.5em; font-weight: bold; margin-top: 10px; }
+.cv-header h3 { font-size: 1.2em; margin-top: 10px; }
+.cv-header h5 { font-size: 1.4em; font-weight: bold; }
+
+/* Hover backgrounds */
+.profile:hover, .formation:hover, .experience:hover {
+  background-color: #f5f5f5;
+}
+
+/* Backgrounds */
 .bg-gradient-profil {
   background: rgba(206, 203, 203, 0.7);
 }
@@ -93,14 +70,8 @@ img {
   background: rgba(158, 157, 157, 0.7);
 }
 
-.col-lg-custom {
-  /* flex: 0 0 8.33%; */
-  max-width: 2.33%;
-}
-
-@page {
-  margin: 0;
-}
+/* Print */
+@page { margin: 0; }
 
 @media print {
   body {
@@ -125,49 +96,32 @@ img {
     align-items: stretch !important;
   }
 
-  .col-lg-custom {
-    width: 5% !important;
-  }
+  /* Largeur colonne en impression */
+  .col-lg-1 { width: 5% !important; }
+  .col-lg-3 { width: 45% !important; }
+  .col-lg-8 { width: 50% !important; }
 
-  .col-lg-3 {
-    width: 45% !important;
-  }
-
-  .col-lg-8 {
-    width: 50% !important;
-  }
-  
   .profile:hover, .experience:hover, .formation:hover {
     background-color: transparent;
   }
- 
+
   .section:hover {
-    background-color: transparent; /* Couleur de fond lorsque l'utilisateur survole l'élément */
+    background-color: transparent;
     border-radius: 10px;
-    box-shadow: 0 0 0px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
     transform: none;
   }
 
-  .cv-header > h2 {
-    font-size: 1.5em;
-  }
-
-  .cv-header > h5 {
-    font-size: 1.3em;
-  }
+  .cv-header > h2 { font-size: 1.5em; }
+  .cv-header > h5 { font-size: 1.3em; }
 
   .lli > h5 {
     font-size: 14px !important;
     margin: 0 !important;
   }
 
-  .certifications {
-    padding: 0px !important;
-  }
-
-  .certifications > h5{
-    font-size: 14px !important;
-  }
+  .certifications { padding: 0px !important; }
+  .certifications > h5 { font-size: 14px !important; }
 
   .card {
     width: 522px !important;
@@ -183,9 +137,4 @@ img {
   .card > .card-body .card-title {
     font-size: 18px;
   }
-} 
-
-
-
-
-
+}

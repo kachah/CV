@@ -1,11 +1,12 @@
+<!-- index.html (corrigé) -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CV - Karim Chah</title>
 
     <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -18,11 +19,11 @@
     <div class="container">
         <div class="row">
 
-            <!-- MARGE -->
-            <div class="col-lg-custom bg-gradient-marge"></div>
+            <!-- MARGE (desktop seulement) -->
+            <div class="d-none d-lg-block col-lg-1 bg-gradient-marge"></div>
 
             <!-- COLONNE GAUCHE -->
-            <div class="col-lg-3 bg-gradient-profil">
+            <div class="col-12 col-lg-3 bg-gradient-profil">
                 <div class="cv-header">
                     <h2>Karim Chah</h2>
                     <h3> -- IT MANAGER | RSSI -- </h3>
@@ -30,10 +31,11 @@
                 </div>
 
                 <div class="d-flex justify-content-center align-items-center section">
-                    <!-- <img src="/assets/cvph.jpeg" class="profile-picture" alt="image"> -->
-                    <a href="https://www.linkedin.com/in/karim-chah-5b494b28/" class="btn btn-primary" target="_blank" rel="noreferrer">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQEvdMXSSy-4sg/profile-displayphoto-crop_800_800/B4EZmUuiioIwAI-/0/1759136852545?e=1761782400&v=beta&t=w_NeHBerRmKMjBMvYQ3VzmXVN0aa1CiSKDUk-y9C6Oc"
-                            alt="Ma photo de profil LinkedIn">
+                    <a href="https://www.linkedin.com/in/karim-chah-5b494b28/" class="profile-link" target="_blank"
+                        rel="noreferrer">
+                        <img class="profile-picture"
+                            src="https://media.licdn.com/dms/image/v2/D4E03AQEvdMXSSy-4sg/profile-displayphoto-crop_800_800/B4EZmUuiioIwAI-/0/1759136852545?e=1761782400&v=beta&t=w_NeHBerRmKMjBMvYQ3VzmXVN0aa1CiSKDUk-y9C6Oc"
+                            alt="Photo de profil">
                     </a>
                 </div>
 
@@ -79,7 +81,7 @@
                                 <li>Vue.js / React.js / Angular</li>
                             </ul>
 
-                            <li class="intermediate">Web development -Bachend :</li>
+                            <li class="intermediate">Web development -Backend :</li>
                             <ul>
                                 <li>PHP (Symfony, Laravel, CakePHP)</li>
                             </ul>
@@ -118,15 +120,17 @@
                             <ul>
                                 <li>Conseiller général 2016-2018</li>
                             </ul>
-                            <li>Participation en tant que membre actif dans le Moto-Club les Aigles de l’Atlas (2009-2011)</li>
+                            <li>Participation en tant que membre actif dans le Moto-Club les Aigles de l’Atlas
+                                (2009-2011)</li>
                             <li>Acteur et assistant metteur en scène avec la Troupe du Territoire Maroc (2005-2011)</li>
                         </ul>
                     </div>
+
                 </div>
             </div>
 
             <!-- COLONNE DROITE -->
-            <div class="col-lg-8">
+            <div class="col-12 col-lg-8">
 
                 <!-- PROFIL PROFESSIONNEL -->
                 <div class="card mb-2">
@@ -143,9 +147,10 @@
                         </p>
 
                         <p class="text-justify">
-                            Habitué à coordonner des équipes pluridisciplinaires (Infrastructure, DevOps, Sécurité, éditeurs)
-                            et à industrialiser les processus (alerting, runbooks, escalade, reporting KPI) afin d’améliorer
-                            durablement la disponibilité, la performance et la sécurité des services.
+                            Habitué à coordonner des équipes pluridisciplinaires (Infrastructure, DevOps, Sécurité,
+                            éditeurs)
+                            et à industrialiser les processus (alerting, runbooks, escalade, reporting KPI) afin
+                            d’améliorer durablement la disponibilité, la performance et la sécurité des services.
                         </p>
 
                         <ul class="list-unstyled mb-0">
@@ -165,9 +170,12 @@
                             Formations
                         </h3>
                         <ul>
-                            <li class="text-justify">2008/2009 : MASTER Recherche en (Radiocommunication et Systèmes Électroniques Embarqués) à l’université PAUL VERLAINE – Metz.</li>
-                            <li class="text-justify">2004/2008 : Cycles d’ingénieur en Réseaux Télécommunications Bac +5 Ecole Marocaine des Sciences de l’ingénieur (EMSI) – Casablanca.</li>
-                            <li class="text-justify">2003/2004 : Baccalauréat Sciences Expérimentales Lycée Moulay Idriss 1er – Casablanca.</li>
+                            <li class="text-justify">2008/2009 : MASTER Recherche en (Radiocommunication et Systèmes
+                                Électroniques Embarqués) à l’université PAUL VERLAINE – Metz.</li>
+                            <li class="text-justify">2004/2008 : Cycles d’ingénieur en Réseaux Télécommunications Bac +5
+                                Ecole Marocaine des Sciences de l’ingénieur (EMSI) – Casablanca.</li>
+                            <li class="text-justify">2003/2004 : Baccalauréat Sciences Expérimentales Lycée Moulay Idriss
+                                1er – Casablanca.</li>
                         </ul>
                     </div>
                 </div>
@@ -210,7 +218,8 @@
                             </ul>
 
                             <h3>Responsable Sécurité des Systèmes d'Information - GSIMT / Bank Al-Maghrib</h3>
-                            <p class="mb-2">Groupement pour un Système Interbancaire Marocain de Télécompensation (GSIMT) · Temps plein</p>
+                            <p class="mb-2">Groupement pour un Système Interbancaire Marocain de Télécompensation (GSIMT)
+                                · Temps plein</p>
                             <p class="mb-2">juil. 2017 - oct. 2017 · 4 mois</p>
                             <p class="mb-2">Casablanca, Maroc</p>
 
@@ -240,8 +249,7 @@
                     </div>
                 </div>
 
-            </div> <!-- /col-lg-8 -->
-
+            </div> <!-- /col -->
         </div> <!-- /row -->
     </div> <!-- /container -->
 </body>

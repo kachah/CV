@@ -1141,5 +1141,22 @@ p{ margin-bottom: 0.35rem !important; }
   /* 5) Les cards prennent toute la largeur disponible */
   .card { width: 100% !important; }
 }
+/* =========================================================
+   PRINT - récupérer encore ~5mm de largeur utile
+   À coller TOUT EN BAS de styles.css
+   ========================================================= */
+@page { size: A4 portrait; margin: 3.5mm; }  /* avant 4.5/5mm -> on réduit */
+
+@media print {
+  /* on garde la colonne marge déjà supprimée */
+
+  /* Réallouer un peu plus à la colonne droite */
+  .col-lg-3 { width: 32% !important; }   /* avant 34% */
+  .col-lg-8 { width: 68% !important; }   /* avant 66% */
+
+  /* Mini marge interne de sécurité (évite que ça colle trop au bord) */
+  .col-lg-8 { padding-right: 1mm !important; }
+  .col-lg-3 { padding-left: 1mm !important; }
+}
 
 }

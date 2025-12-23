@@ -1,140 +1,130 @@
-/* styles.css (corrigé) */
+/* ============================
+   Colonne gauche : version pro + compacte (sans modifier HTML)
+   À coller à la fin du styles.css
+   ============================ */
 
-/* IMPORTANT : on ne force plus width/height sur toutes les images */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Photo de profil */
-.profile-link{
-  display: inline-block;
-  text-decoration: none;
-}
-
-.profile-picture{
-  border-radius: 50%;
-  width: 160px;          /* ajustez si besoin */
-  height: 160px;
-  object-fit: cover;     /* évite la déformation */
-  object-position: center;
-  display: block;
-  border: 3px solid rgba(255,255,255,0.7);
-}
-
-/* Sections */
-.section:hover {
-  background-color: #f5eeee;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transform: scale(1.01);
-  transition: transform 0.3s;
-}
-
-.section {
-  padding-block: 7px;
-  transform: scale(1);
-  transition: transform 0.3s;
-}
-
-/* CV experience */
-.cv-experience {
-  margin-bottom: 20px;
-}
-.cv-experience h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-.cv-experience h4 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-/* Header */
-.cv-header h1 { font-size: 2em; font-weight: bold; }
-.cv-header h2 { font-size: 1.5em; font-weight: bold; margin-top: 10px; }
-.cv-header h3 { font-size: 1.2em; margin-top: 10px; }
-.cv-header h5 { font-size: 1.4em; font-weight: bold; }
-
-/* Hover backgrounds */
-.profile:hover, .formation:hover, .experience:hover {
-  background-color: #f5f5f5;
-}
-
-/* Backgrounds */
+/* Rendre la colonne gauche plus “dense” */
 .bg-gradient-profil {
-  background: rgba(206, 203, 203, 0.7);
-}
-.bg-gradient-marge {
-  background: rgba(158, 157, 157, 0.7);
+  padding-top: 8px;
+  padding-bottom: 10px;
 }
 
-/* Print */
-@page { margin: 0; }
+.lli p.mb-2 {
+  margin-bottom: 0.28rem !important;
+  line-height: 1.25;
+}
 
+/* Titres à gauche plus lisibles */
+.lli > h5,
+.certifications > h5 {
+  letter-spacing: 0.4px;
+  margin-top: 6px;
+}
+
+/* Listes plus compactes */
+.lli ul,
+.certifications ul {
+  margin-bottom: 0.45rem;
+}
+.lli ul li,
+.certifications ul li {
+  margin-bottom: 0.20rem;
+  line-height: 1.25;
+}
+
+/* Icônes automatiques pour les 5 premières lignes des infos perso
+   (Adresse, âge/famille, permis, email, téléphone)
+   IMPORTANT : fonctionne sur la structure actuelle (p.mb-2) */
+.lli:first-of-type p.mb-2 {
+  position: relative;
+  padding-left: 22px; /* place pour l'icône */
+}
+
+/* 1) Adresse */
+.lli:first-of-type p.mb-2:nth-of-type(1)::before {
+  content: "\f3c5"; /* map-marker-alt */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  opacity: 0.85;
+}
+
+/* 2) Âge / famille */
+.lli:first-of-type p.mb-2:nth-of-type(2)::before {
+  content: "\f007"; /* user */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  opacity: 0.85;
+}
+
+/* 3) Permis */
+.lli:first-of-type p.mb-2:nth-of-type(3)::before {
+  content: "\f5b0"; /* id-card */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  opacity: 0.85;
+}
+
+/* 4) Email */
+.lli:first-of-type p.mb-2:nth-of-type(4)::before {
+  content: "\f0e0"; /* envelope */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  opacity: 0.85;
+}
+
+/* 5) Téléphone */
+.lli:first-of-type p.mb-2:nth-of-type(5)::before {
+  content: "\f095"; /* phone */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  opacity: 0.85;
+}
+
+/* Bouton WhatsApp : compact */
+.btn.btn-success {
+  font-size: 0.88rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 10px;
+}
+
+/* “Vercel | GitHub” un peu plus discret */
+.cv-left em,
+em {
+  font-style: italic;
+  font-size: 0.9rem;
+  opacity: 0.92;
+}
+
+/* CERTIFICATIONS et EXPERIENCE EXTÉRIEURE : meilleure hiérarchie */
+.certifications ul li {
+  padding-left: 0;
+}
+
+/* Impression PDF : garder les icônes et compacter */
 @media print {
-  body {
+  .lli:first-of-type p.mb-2 {
+    padding-left: 18px !important;
+  }
+  .lli:first-of-type p.mb-2::before {
+    opacity: 1 !important;
+  }
+  .btn.btn-success {
+    padding: 4px 6px !important;
     font-size: 10px !important;
-    background-color: transparent;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  .container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .container > .row {
-    width: 100%;
-    height: 100%;
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: stretch !important;
-  }
-
-  /* Largeur colonne en impression */
-  .col-lg-1 { width: 5% !important; }
-  .col-lg-3 { width: 45% !important; }
-  .col-lg-8 { width: 50% !important; }
-
-  .profile:hover, .experience:hover, .formation:hover {
-    background-color: transparent;
-  }
-
-  .section:hover {
-    background-color: transparent;
-    border-radius: 10px;
-    box-shadow: none;
-    transform: none;
-  }
-
-  .cv-header > h2 { font-size: 1.5em; }
-  .cv-header > h5 { font-size: 1.3em; }
-
-  .lli > h5 {
-    font-size: 14px !important;
-    margin: 0 !important;
-  }
-
-  .certifications { padding: 0px !important; }
-  .certifications > h5 { font-size: 14px !important; }
-
-  .card {
-    width: 522px !important;
-    margin: 1px !important;
-  }
-
-  .card > .card-body {
-    width: fit-content;
-    margin: 0 !important;
-    padding: 2px 5px !important;
-  }
-
-  .card > .card-body .card-title {
-    font-size: 18px;
   }
 }

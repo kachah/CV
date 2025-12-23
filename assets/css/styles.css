@@ -1,5 +1,6 @@
 /* ============================
    Colonne gauche : version pro + compacte (sans modifier HTML)
+   (NOUVEAU - icônes en emoji, donc plus de carrés □)
    À coller à la fin du styles.css
    ============================ */
 
@@ -34,65 +35,43 @@
 
 /* Icônes automatiques pour les 5 premières lignes des infos perso
    (Adresse, âge/famille, permis, email, téléphone)
-   IMPORTANT : fonctionne sur la structure actuelle (p.mb-2) */
+   -> Version emoji : fiable partout (GitHub Pages + PDF) */
 .lli:first-of-type p.mb-2 {
   position: relative;
   padding-left: 22px; /* place pour l'icône */
 }
 
-/* 1) Adresse */
-.lli:first-of-type p.mb-2:nth-of-type(1)::before {
-  content: "\f3c5"; /* map-marker-alt */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+.lli:first-of-type p.mb-2::before {
   position: absolute;
   left: 0;
-  top: 1px;
-  opacity: 0.85;
+  top: 0;
+  opacity: 0.95;
+  line-height: 1.1;
+}
+
+/* 1) Adresse */
+.lli:first-of-type p.mb-2:nth-of-type(1)::before {
+  content: "📍";
 }
 
 /* 2) Âge / famille */
 .lli:first-of-type p.mb-2:nth-of-type(2)::before {
-  content: "\f007"; /* user */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 1px;
-  opacity: 0.85;
+  content: "👤";
 }
 
 /* 3) Permis */
 .lli:first-of-type p.mb-2:nth-of-type(3)::before {
-  content: "\f5b0"; /* id-card */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 1px;
-  opacity: 0.85;
+  content: "🪪";
 }
 
 /* 4) Email */
 .lli:first-of-type p.mb-2:nth-of-type(4)::before {
-  content: "\f0e0"; /* envelope */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 1px;
-  opacity: 0.85;
+  content: "✉️";
 }
 
 /* 5) Téléphone */
 .lli:first-of-type p.mb-2:nth-of-type(5)::before {
-  content: "\f095"; /* phone */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 1px;
-  opacity: 0.85;
+  content: "📞";
 }
 
 /* Bouton WhatsApp : compact */
@@ -115,13 +94,10 @@ em {
   padding-left: 0;
 }
 
-/* Impression PDF : garder les icônes et compacter */
+/* Impression PDF : compacter */
 @media print {
   .lli:first-of-type p.mb-2 {
     padding-left: 18px !important;
-  }
-  .lli:first-of-type p.mb-2::before {
-    opacity: 1 !important;
   }
   .btn.btn-success {
     padding: 4px 6px !important;

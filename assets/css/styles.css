@@ -1158,5 +1158,36 @@ p{ margin-bottom: 0.35rem !important; }
   .col-lg-8 { padding-right: 1mm !important; }
   .col-lg-3 { padding-left: 1mm !important; }
 }
+/* ============================
+   PHOTO - Option A (pro) + taille print spécifique
+   ============================ */
+
+/* ÉCRAN */
+.profile-picture{
+  width: 145px;               /* un peu plus grande à l'écran */
+  height: 145px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  border: 2px solid #ffffff;
+  box-shadow:
+    0 0 0 2px rgba(0,0,0,0.10),
+    0 6px 18px rgba(0,0,0,0.18);
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+}
+
+/* IMPRESSION PDF */
+@media print{
+  .profile-picture{
+    width: 112px !important;   /* un peu plus petite en PDF */
+    height: 112px !important;
+    border-width: 2px !important;
+    box-shadow:
+      0 0 0 2px rgba(0,0,0,0.10) !important,
+      0 5px 14px rgba(0,0,0,0.16) !important;
+  }
+}
 
 }

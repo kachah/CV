@@ -103,4 +103,129 @@ em {
     padding: 4px 6px !important;
     font-size: 10px !important;
   }
+
+   /* ============================
+   PRINT A4 - 1 PAGE (override)
+   À coller tout en bas du styles.css
+   ============================ */
+
+@page {
+  size: A4 portrait;
+  margin: 6mm; /* petit margin pour éviter les coupures */
+}
+
+@media print {
+
+  /* Reset effets et marges */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: none !important;
+  }
+
+  html, body {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important; /* évite pages supplémentaires */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: transparent !important;
+    font-size: 10.5px !important;     /* clé pour tout faire tenir */
+    line-height: 1.22 !important;      /* plus compact */
+  }
+
+  /* Container A4 fixe */
+  .container {
+    width: 210mm !important;
+    max-width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Row en 2 colonnes, pas de retour à la ligne */
+  .container > .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    height: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Largeurs colonnes (ajuste si besoin) */
+  .col-lg-1 { width: 5% !important; }
+  .col-lg-3 { width: 33% !important; }
+  .col-lg-8 { width: 62% !important; }
+
+  /* Désactiver hover/transform en print */
+  .section:hover,
+  .profile:hover, .experience:hover, .formation:hover {
+    background-color: transparent !important;
+    transform: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Photo plus petite en print */
+  .profile-picture {
+    width: 95px !important;
+    height: 95px !important;
+    border-width: 2px !important;
+  }
+
+  /* Cards: compacts et sans largeur fixe */
+  .card {
+    width: auto !important;
+    margin: 2px 0 !important;
+    border: 1px solid #e6e6e6 !important;
+    border-radius: 6px !important;
+  }
+
+  .card > .card-body {
+    padding: 4px 6px !important;
+    margin: 0 !important;
+  }
+
+  .card .card-title {
+    font-size: 13px !important;
+    margin: 0 0 4px 0 !important;
+  }
+
+  /* Titres dans l'expérience */
+  .cv-experience h3 {
+    font-size: 12px !important;
+    margin: 0 0 2px 0 !important;
+    line-height: 1.15 !important;
+  }
+  .cv-experience h4 {
+    font-size: 11px !important;
+    margin: 6px 0 2px 0 !important;
+  }
+
+  /* Listes plus compactes */
+  ul { margin: 0 0 4px 0 !important; }
+  li { margin-bottom: 1px !important; }
+
+  /* Colonne gauche : compacter encore */
+  .lli p.mb-2 { margin-bottom: 2px !important; line-height: 1.18 !important; }
+  .lli > h5, .certifications > h5 { font-size: 11px !important; margin: 4px 0 2px 0 !important; }
+
+  /* Bouton WhatsApp compact */
+  .btn.btn-success {
+    padding: 3px 6px !important;
+    font-size: 10px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Empêcher des coupures au milieu d’un bloc */
+  .card, .cv-experience, .lli, .certifications {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Liens propres en PDF */
+  a { text-decoration: none !important; }
+}
+
 }

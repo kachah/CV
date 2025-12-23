@@ -606,5 +606,119 @@ p{ margin-bottom: 0.35rem !important; }
 
   a { text-decoration: none !important; }
 }
+/* =========================================================
+   PRINT A4 - 1 PAGE (agrandir légèrement texte + titres)
+   À coller TOUT EN BAS de styles.css
+   ========================================================= */
+@page { size: A4 portrait; margin: 6mm; }
+
+@media print {
+  * { box-shadow: none !important; text-shadow: none !important; transition: none !important; }
+
+  html, body{
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+
+    /* + un peu plus grand */
+    font-size: 11.4px !important;
+    line-height: 1.22 !important;
+  }
+
+  .container{
+    width: 210mm !important;
+    max-width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .container > .row{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    height: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* colonnes stables */
+  .col-lg-1{ width: 4% !important; }
+  .col-lg-3{ width: 33% !important; }
+  .col-lg-8{ width: 63% !important; }
+
+  /* désactiver hover */
+  .section:hover,
+  .profile:hover, .experience:hover, .formation:hover{
+    background: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* photo un peu plus grande */
+  .profile-picture{
+    width: 104px !important;
+    height: 104px !important;
+    border-width: 2px !important;
+  }
+
+  /* cartes */
+  .card{
+    margin: 3px 0 !important;
+    border: 1px solid #e6e6e6 !important;
+    border-radius: 7px !important;
+  }
+  .card > .card-body{
+    padding: 6px 8px !important;
+    margin: 0 !important;
+  }
+
+  /* Titres sections (Profil/Formations/Expérience) */
+  .card .card-title{
+    font-size: 13.6px !important;
+    margin: 0 0 6px 0 !important;
+  }
+
+  /* Titres poste (Adjoint Responsable...) */
+  .cv-experience h3{
+    font-size: 12.2px !important;
+    line-height: 1.18 !important;
+    margin: 0 0 4px 0 !important;
+  }
+  .cv-experience h4{
+    font-size: 11.4px !important;
+    margin: 7px 0 3px 0 !important;
+  }
+
+  /* spacements */
+  p{ margin-bottom: 3px !important; }
+  ul{ margin: 0 0 5px 0 !important; padding-left: 15px !important; }
+  li{ margin-bottom: 1.4px !important; }
+
+  /* colonne gauche : header */
+  .cv-header h2{ font-size: 14.8px !important; margin: 3px 0 !important; }
+  .cv-header h3{ font-size: 11.8px !important; margin: 2px 0 !important; }
+  .cv-header h5, .cv-header p{ font-size: 10.5px !important; margin: 2px 0 !important; }
+
+  /* titres sections gauche */
+  .lli > h5, .certifications > h5{
+    font-size: 11.2px !important;
+    margin: 6px 0 3px 0 !important;
+  }
+
+  .lli p.mb-2{ margin-bottom: 2px !important; line-height: 1.18 !important; }
+
+  /* bouton WhatsApp */
+  .btn.btn-success{
+    padding: 4px 8px !important;
+    font-size: 10.2px !important;
+    border-radius: 8px !important;
+  }
+
+  a{ text-decoration: none !important; }
+}
 
 }

@@ -1106,5 +1106,40 @@ p{ margin-bottom: 0.35rem !important; }
     width: 100% !important;
   }
 }
+/* =========================================================
+   PRINT - Utiliser toute la largeur (réduire marge droite)
+   À coller TOUT EN BAS de styles.css
+   ========================================================= */
+@media print {
+
+  /* 1) Supprimer la colonne de marge (col-lg-1) */
+  .col-lg-1.bg-gradient-marge,
+  .col-lg-1 {
+    display: none !important;
+    width: 0 !important;
+  }
+
+  /* 2) Forcer la row à prendre 100% de la largeur imprimable */
+  .container,
+  .container > .row {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 3) Réallouer la largeur aux 2 colonnes restantes */
+  .col-lg-3 { width: 34% !important; }
+  .col-lg-8 { width: 66% !important; }
+
+  /* 4) Enlever les paddings Bootstrap (gouttières) qui créent du blanc */
+  .container { padding-left: 0 !important; padding-right: 0 !important; }
+  .row { margin-left: 0 !important; margin-right: 0 !important; }
+  .col-12, .col-lg-3, .col-lg-8 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 5) Les cards prennent toute la largeur disponible */
+  .card { width: 100% !important; }
+}
 
 }

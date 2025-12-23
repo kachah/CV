@@ -1189,5 +1189,38 @@ p{ margin-bottom: 0.35rem !important; }
       0 5px 14px rgba(0,0,0,0.16) !important;
   }
 }
+/* ==========================================
+   PHOTO : ronde à l'écran (Option A) + CARRÉE en PDF
+   ========================================== */
+
+/* ÉCRAN : ronde (Option A) */
+.profile-picture{
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  border: 2px solid #ffffff;
+  box-shadow:
+    0 0 0 2px rgba(0,0,0,0.10),
+    0 6px 18px rgba(0,0,0,0.18);
+  background: #fff;
+  display: block;
+  margin: 0 auto;
+}
+
+/* IMPRESSION PDF : carrée */
+@media print{
+  .profile-picture{
+    width: 112px !important;     /* ajuste si besoin */
+    height: 112px !important;
+    border-radius: 8px !important;  /* 0 = carré strict, 8px = carré "soft" */
+    object-fit: cover !important;
+    object-position: center 15% !important;
+    border: 2px solid rgba(0,0,0,0.12) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.14) !important;
+    background: #fff !important;
+  }
+}
 
 }
